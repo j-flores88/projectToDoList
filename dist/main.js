@@ -10,23 +10,33 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/Project.js":
+/*!************************!*\
+  !*** ./src/Project.js ***!
+  \************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"Project\": () => (/* binding */ Project)\n/* harmony export */ });\nclass Project{\n    constructor(name) {\n        this.name = name;\n        this.tasks = [];\n    }\n    get getName() {\n        return this.name;\n    }\n    set setName(value){\n        if(value)\n        this.name = value;\n    }\n    get getTasks() {\n      return this.tasks;\n    }\n    set setTasks(value) {\n      if(value)\n      this.tasks.push(value);\n    }\n}\n\n//# sourceURL=webpack://projecttodo/./src/Project.js?");
+
+/***/ }),
+
+/***/ "./src/Task.js":
+/*!*********************!*\
+  !*** ./src/Task.js ***!
+  \*********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"Task\": () => (/* binding */ Task)\n/* harmony export */ });\nclass Task {\n    constructor(name, description, dueDate, priority) {\n      this.name = name;\n      this.description = description;\n      this.dueDate = dueDate;\n      this.priority = priority\n    }\n    get getName() {\n      return this.name;\n    }\n    get getDescription() {\n      return this.description;\n    }\n    get getDueDate() {\n      return this.dueDate;\n    }\n    get getPriority() {\n      return this.priority;\n    }\n    set setName(value) {\n      if(value)\n      this.name = value;\n    }\n    set setDescription(value) {\n      if(value)\n      this.description = value;\n    }\n    set setDueDate(value) {\n      if(value)\n      this.dueDate = value;\n    }\n    set setPriority(value) {\n      if(value)\n      this.priority = value;\n    }\n}\n\n//# sourceURL=webpack://projecttodo/./src/Task.js?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _projectFactory__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./projectFactory */ \"./src/projectFactory.js\");\n\n\n\n//# sourceURL=webpack://projecttodo/./src/index.js?");
-
-/***/ }),
-
-/***/ "./src/projectFactory.js":
-/*!*******************************!*\
-  !*** ./src/projectFactory.js ***!
-  \*******************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"projectFactory\": () => (/* binding */ projectFactory)\n/* harmony export */ });\nfunction projectFactory(projectName) {\n    this.name = projectName;\n    \n    const newProject = document.createElement('ul');\n  \n    // appendToPage(name, newProject);\n};\n\n\n\n//# sourceURL=webpack://projecttodo/./src/projectFactory.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _Project__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Project */ \"./src/Project.js\");\n/* harmony import */ var _Task__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Task */ \"./src/Task.js\");\n\n\n\n//# sourceURL=webpack://projecttodo/./src/index.js?");
 
 /***/ })
 

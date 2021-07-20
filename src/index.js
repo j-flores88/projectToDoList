@@ -1,2 +1,2 @@
-import { projectFactory } from "./projectFactory";
-import { addTolist } from "./addToList";
+import { Project } from "./Project";
+import { Task } from "./Task";
