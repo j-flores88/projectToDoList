@@ -50,43 +50,33 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
+/***/ "./src/createProject.js":
+/*!******************************!*\
+  !*** ./src/createProject.js ***!
+  \******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"createProject\": () => (/* binding */ createProject)\n/* harmony export */ });\n/* harmony import */ var _Project__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Project */ \"./src/Project.js\");\n/* harmony import */ var ___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! . */ \"./src/index.js\");\n/* harmony import */ var _renderProjects___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./renderProjects  */ \"./src/renderProjects .js\");\n\n\n\n\nconst createProject = (projectName) => {\n    const newProject = new _Project__WEBPACK_IMPORTED_MODULE_0__.Project(projectName);\n    ___WEBPACK_IMPORTED_MODULE_1__.projects.push(newProject);\n    (0,_renderProjects___WEBPACK_IMPORTED_MODULE_2__.renderProjects)();\n}\n\n//# sourceURL=webpack://projecttodo/./src/createProject.js?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"content\": () => (/* binding */ content),\n/* harmony export */   \"deleteButton\": () => (/* binding */ deleteButton),\n/* harmony export */   \"addButton\": () => (/* binding */ addButton),\n/* harmony export */   \"projects\": () => (/* binding */ projects)\n/* harmony export */ });\n/* harmony import */ var _Project__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Project */ \"./src/Project.js\");\n/* harmony import */ var _Task__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Task */ \"./src/Task.js\");\n/* harmony import */ var _createElement__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./createElement */ \"./src/createElement.js\");\n/* harmony import */ var _renderInput__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./renderInput */ \"./src/renderInput.js\");\n/* harmony import */ var _renderProject___WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./renderProject  */ \"./src/renderProject .js\");\n/* harmony import */ var _addTasks__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./addTasks */ \"./src/addTasks.js\");\n/* harmony import */ var _renderTasks__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./renderTasks */ \"./src/renderTasks.js\");\n\n\n\n\n\n\n\n\n\nconst content = document.getElementById('content');\nconst deleteButton = `<i class=\"fas fa-times delete\"></i>`;\nconst addButton = `plus`;\nconst projects = []\n\n\nconst newPrcjInput = (0,_renderInput__WEBPACK_IMPORTED_MODULE_3__.renderInput)('Project Name', addButton, 'newProject', 'newPrjctText');\n\ncontent.appendChild(newPrcjInput);\n\nwindow.addEventListener('click', (e) => {\n    if(e.target.classList.contains('newProject')){\n        const input = document.getElementById('newPrjctText')\n        const newPrjct = new _Project__WEBPACK_IMPORTED_MODULE_0__.Project(input.value.toUpperCase().trim())\n        ;(0,_renderProject___WEBPACK_IMPORTED_MODULE_4__.renderProject)(newPrjct);\n        projects.push(newPrjct)\n        input.value = ''\n    } else if(e.target.classList.contains('newTask')) {\n        const input = document.getElementById('newTask');\n        const newTask = new _Task__WEBPACK_IMPORTED_MODULE_1__.Task(input.value.toUpperCase().trim());\n        const currentProject = e.path[2].innerText.trim();\n        (0,_addTasks__WEBPACK_IMPORTED_MODULE_5__.addTasks)(currentProject, newTask)\n        input.value = ''  \n    } \n});\n\n\n\n//# sourceURL=webpack://projecttodo/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"projectList\": () => (/* binding */ projectList),\n/* harmony export */   \"projects\": () => (/* binding */ projects)\n/* harmony export */ });\n/* harmony import */ var _Project__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Project */ \"./src/Project.js\");\n/* harmony import */ var _Task__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Task */ \"./src/Task.js\");\n/* harmony import */ var _createElement__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./createElement */ \"./src/createElement.js\");\n/* harmony import */ var _renderProjects___WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./renderProjects  */ \"./src/renderProjects .js\");\n/* harmony import */ var _addTasks__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./addTasks */ \"./src/addTasks.js\");\n/* harmony import */ var _renderTasks__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./renderTasks */ \"./src/renderTasks.js\");\n/* harmony import */ var _createProject__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./createProject */ \"./src/createProject.js\");\n\n\n\n\n\n\n\n\n\nconst projectsDiv = document.getElementById('projectsDiv');\nconst newPjText = document.getElementById('newPjText');\nconst newPjBtn = document.getElementById('newPjBtn');\nconst currProjectDiv = document.getElementById('currProjectDiv');\nconst newTaskText = document.getElementById('newTaskText');\nconst newTaskBtn = document.getElementById('newTaskBtn');\nconst projectList = document.getElementById('projectList');\nconst projects = [];\n\nnewPjBtn.addEventListener('click', () => {\n    if(newPjText.value === '') return\n    ;(0,_createProject__WEBPACK_IMPORTED_MODULE_6__.createProject)(newPjText.value.trim().toUpperCase());\n    newPjText.value = ''\n});\n\n//# sourceURL=webpack://projecttodo/./src/index.js?");
 
 /***/ }),
 
-/***/ "./src/renderInput.js":
-/*!****************************!*\
-  !*** ./src/renderInput.js ***!
-  \****************************/
+/***/ "./src/renderProjects .js":
+/*!********************************!*\
+  !*** ./src/renderProjects .js ***!
+  \********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"renderInput\": () => (/* binding */ renderInput)\n/* harmony export */ });\nconst renderInput = (placeholder, buttonType, classes, ids) => {\n    const newBTn = `<i class=\"fas fa-${buttonType} ${classes}\"></i>`\n    const mainInput = `\n        <input type=\"text\" id=\"${ids}\" placeholder=\"${placeholder}\"> \n        ${newBTn}\n        `\n    const inputDiv = document.createElement('div');\n\n    inputDiv.innerHTML = mainInput;\n    return inputDiv;\n}\n\n//# sourceURL=webpack://projecttodo/./src/renderInput.js?");
-
-/***/ }),
-
-/***/ "./src/renderOnPage.js":
-/*!*****************************!*\
-  !*** ./src/renderOnPage.js ***!
-  \*****************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"renderOnPage\": () => (/* binding */ renderOnPage)\n/* harmony export */ });\n/* harmony import */ var ___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! . */ \"./src/index.js\");\n\n\nconst renderOnPage = (parent, ...children) => {\n    const parentEl = document.createElement(parent);\n    \n    children.forEach(child => {\n        parentEl.appendChild(child);\n    });\n    \n    ___WEBPACK_IMPORTED_MODULE_0__.content.appendChild(parentEl)\n}\n\n//# sourceURL=webpack://projecttodo/./src/renderOnPage.js?");
-
-/***/ }),
-
-/***/ "./src/renderProject .js":
-/*!*******************************!*\
-  !*** ./src/renderProject .js ***!
-  \*******************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"renderProject\": () => (/* binding */ renderProject)\n/* harmony export */ });\n/* harmony import */ var _renderInput__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./renderInput */ \"./src/renderInput.js\");\n/* harmony import */ var _renderOnPage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./renderOnPage */ \"./src/renderOnPage.js\");\n/* harmony import */ var _createElement__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./createElement */ \"./src/createElement.js\");\n/* harmony import */ var ___WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! . */ \"./src/index.js\");\n\n\n\n\n\nconst renderProject = (project) => {\n    const projectTitle = (0,_createElement__WEBPACK_IMPORTED_MODULE_2__.createElement)('h1', `${project.name} ${___WEBPACK_IMPORTED_MODULE_3__.deleteButton}`)\n    const projectInput = (0,_renderInput__WEBPACK_IMPORTED_MODULE_0__.renderInput)('New Task', ___WEBPACK_IMPORTED_MODULE_3__.addButton, 'newTask', 'newTask');\n    const projectList = document.createElement('ul');\n\n    (0,_renderOnPage__WEBPACK_IMPORTED_MODULE_1__.renderOnPage)('div', projectTitle, projectInput, projectList)\n}\n\n//# sourceURL=webpack://projecttodo/./src/renderProject_.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"renderProjects\": () => (/* binding */ renderProjects)\n/* harmony export */ });\n/* harmony import */ var _createElement__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./createElement */ \"./src/createElement.js\");\n/* harmony import */ var ___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! . */ \"./src/index.js\");\n\n\n\n\n\nconst renderProjects = () => {\n    ___WEBPACK_IMPORTED_MODULE_1__.projectList.innerHTML = '';\n    ___WEBPACK_IMPORTED_MODULE_1__.projects.forEach(project => {\n        const pjAppend = (0,_createElement__WEBPACK_IMPORTED_MODULE_0__.createElement)('div', '');\n        const pjTitle = (0,_createElement__WEBPACK_IMPORTED_MODULE_0__.createElement)('h4', project.name);\n        const pjBtn = (0,_createElement__WEBPACK_IMPORTED_MODULE_0__.createElement)('i', `<i class=\"fas fa-trash delete\"></i>`)\n        pjAppend.appendChild(pjTitle);\n        pjAppend.appendChild(pjBtn)\n        ___WEBPACK_IMPORTED_MODULE_1__.projectList.appendChild(pjAppend)\n    })\n}\n\n//# sourceURL=webpack://projecttodo/./src/renderProjects_.js?");
 
 /***/ }),
 

@@ -2,35 +2,22 @@ import { Project } from "./Project";
 import { Task } from "./Task";
 import { createElement } from "./createElement";
 
-import { renderInput } from "./renderInput";
-import { renderProject } from "./renderProject ";
+import { renderProjects } from "./renderProjects ";
 import { addTasks } from "./addTasks";
 import { renderTasks } from "./renderTasks";
+import { createProject } from "./createProject";
 
-const content = document.getElementById('content');
-const deleteButton = `<i class="fas fa-times delete"></i>`;
-const addButton = `plus`;
-const projects = []
+const projectsDiv = document.getElementById('projectsDiv');
+const newPjText = document.getElementById('newPjText');
+const newPjBtn = document.getElementById('newPjBtn');
+const currProjectDiv = document.getElementById('currProjectDiv');
+const newTaskText = document.getElementById('newTaskText');
+const newTaskBtn = document.getElementById('newTaskBtn');
+export const projectList = document.getElementById('projectList');
+export const projects = [];
 
-
-const newPrcjInput = renderInput('Project Name', addButton, 'newProject', 'newPrjctText');
-
-content.appendChild(newPrcjInput);
-
-window.addEventListener('click', (e) => {
-    if(e.target.classList.contains('newProject')){
-        const input = document.getElementById('newPrjctText')
-        const newPrjct = new Project(input.value.toUpperCase().trim())
-        renderProject(newPrjct);
-        projects.push(newPrjct)
-        input.value = ''
-    } else if(e.target.classList.contains('newTask')) {
-        const input = document.getElementById('newTask');
-        const newTask = new Task(input.value.toUpperCase().trim());
-        const currentProject = e.path[2].innerText.trim();
-        addTasks(currentProject, newTask)
-        input.value = ''  
-    } 
+newPjBtn.addEventListener('click', () => {
+    if(newPjText.value === '') return
+    createProject(newPjText.value.trim().toUpperCase());
+    newPjText.value = ''
 });
-
-export { content, deleteButton, addButton, projects }
