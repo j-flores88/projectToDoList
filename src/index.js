@@ -6,6 +6,8 @@ import { renderProjects } from "./renderProjects ";
 import { addTasks } from "./addTasks";
 import { renderTasks } from "./renderTasks";
 import { createProject } from "./createProject";
+import {  showModal } from "./taskModal";
+
 
 const projectsDiv = document.getElementById('projectsDiv');
 const newPjText = document.getElementById('newPjText');
@@ -20,4 +22,8 @@ newPjBtn.addEventListener('click', () => {
     if(newPjText.value === '') return
     createProject(newPjText.value.trim().toUpperCase());
     newPjText.value = ''
+});
+
+newTaskBtn.addEventListener('click', () => {
+    showModal();
 });
