@@ -17,4 +17,12 @@ export class Project{
       if(value)
       this.tasks.push(value);
     }
+    deleteTask(value) {
+      if(value)
+      for(let i = 0; i < this.tasks.length; i++) {
+        if(this.tasks[i].name === value) {
+          this.tasks.splice(i, 1)
+        }
+      }
+    }
 }
