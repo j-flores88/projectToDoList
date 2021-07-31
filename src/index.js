@@ -1,6 +1,7 @@
 import { createProject } from "./createProject";
 import {  showModal } from "./taskModal";
 import { setCurrentProject } from "./setCurrentProject";
+import { removeTask } from "./removeTask";
 
 const newPjText = document.getElementById('newPjText');
 const newPjBtn = document.getElementById('newPjBtn');
@@ -27,8 +28,12 @@ window.addEventListener('click', (e) => {
         setCurrentProject(currentProject)
     }
     if(target.classList.contains('delete')) {
+        if(e.path[2].innerText === '') {
+            removeTask(currentProject, e.path[3].innerText);
+        } else {
+            console.log('for projects!')
+        }
         // console.log(e.path[2].innerText) for pjs
-        // console.log(e.path[3].innerText) for tasks
     }
 });
 
