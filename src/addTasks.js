@@ -1,9 +1,11 @@
 import { projects } from ".";
+import { Task } from './Task'
 
-export const addTasks = (prjct, task) => {
+export const addTasks = (prjct, name, descriton, priority) => {
     let currPj;
     projects.forEach(pj => {
         if(pj.name === prjct) currPj = pj
     });   
-    currPj.setTasks = task
+    const newTask = new Task(name, descriton, priority);
+    currPj.setTasks = newTask;
 };

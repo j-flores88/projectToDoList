@@ -8,7 +8,7 @@ const newTaskBtn = document.getElementById('newTaskBtn');
 
 export const projectList = document.getElementById('projectList');
 export const projects = [];
-export let currentProject = ''
+export let currentProject = `TODAYS' TASKS`
 
 newPjBtn.addEventListener('click', () => {
     if(newPjText.value === '') return

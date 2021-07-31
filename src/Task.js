@@ -1,9 +1,8 @@
 export class Task {
-    constructor(name, description, dueDate, priority) {
+    constructor(name, description, priority) {
       this.name = name;
       this.description = description;
       this.priority = priority;
-      this.dueDate = dueDate;
     }
     get getName() {
       return this.name;

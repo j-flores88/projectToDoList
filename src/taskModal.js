@@ -1,5 +1,7 @@
 export let modalWrap = null;
 import { Modal } from 'bootstrap';
+import { currentProject } from '.';
+import { addTasks } from './addTasks';
 
 export const showModal = () => {
     if(modalWrap !== null) modalWrap.remove();
@@ -28,12 +30,6 @@ export const showModal = () => {
                                 <option value="High">High</option>
                                 </select>
                             </div>
-                            <div class="input-group mb-3">
-                                <select class="form-select" id="projectSelect" required>
-                                <option selected>Select Project</option>
-                            
-                                </select>
-                            </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
@@ -45,13 +41,15 @@ export const showModal = () => {
     `;
 
     modalWrap.querySelector('.createBtn').onclick = () => {
-        const taskNAme = modalWrap.querySelector('#newTaskText').value.trim();
+        const taskName = modalWrap.querySelector('#newTaskText').value.trim();
         const taskDescription = modalWrap.querySelector('#taskDescription').value.trim();
         const taskPriority = modalWrap.querySelector('#prioritySelect').value;
 
-        if(taskNAme === '') return;
+        if(taskName === '') return;
         if(taskDescription === '') return;
         if(taskPriority === 'Priority') return;
+
+        addTasks(currentProject, taskName, taskDescription, taskPriority)
         modal.hide()
     }
 
