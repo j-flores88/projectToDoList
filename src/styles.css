@@ -1,11 +1,39 @@
 #content {
     background-color: tomato;
+    margin: 5%;
+    padding: 1%;
+    border-radius: 10px;
 }
 
-#projectsDiv {
+#projectsDiv, #currProjectDiv {
     background-color: turquoise;
+    display: block;
+    text-align: center;
+    justify-content: center;
+    padding: 2%;
+    border-radius: 10px;
+}
+#projectList {
+    background-color: whitesmoke;
+    padding: 2%;
+    border-radius: 10px;
+}
+.row {
+    justify-content: space-around;
+}
+
+.projectDiv {
+    display: flex;
+    justify-content: space-between;
 }
 
 #currProjectDiv {
     background-color: violet;
+}
+
+.projectTitle:hover {
+    cursor: pointer;
+}
+.delete:hover {
+    cursor: pointer;
 }

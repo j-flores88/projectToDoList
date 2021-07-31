@@ -1,22 +1,14 @@
-import { Project } from "./Project";
-import { Task } from "./Task";
-import { createElement } from "./createElement";
-
-import { renderProjects } from "./renderProjects ";
-import { addTasks } from "./addTasks";
-import { renderTasks } from "./renderTasks";
 import { createProject } from "./createProject";
 import {  showModal } from "./taskModal";
+import { setCurrentProject } from "./setCurrentProject";
 
-
-const projectsDiv = document.getElementById('projectsDiv');
 const newPjText = document.getElementById('newPjText');
 const newPjBtn = document.getElementById('newPjBtn');
-const currProjectDiv = document.getElementById('currProjectDiv');
-const newTaskText = document.getElementById('newTaskText');
 const newTaskBtn = document.getElementById('newTaskBtn');
+
 export const projectList = document.getElementById('projectList');
 export const projects = [];
+export let currentProject = ''
 
 newPjBtn.addEventListener('click', () => {
     if(newPjText.value === '') return
@@ -27,3 +19,17 @@ newPjBtn.addEventListener('click', () => {
 newTaskBtn.addEventListener('click', () => {
     showModal();
 });
+
+window.addEventListener('click', (e) => {
+    const target = e.target;
+    if(target.classList.contains('projectTitle')) {
+        currentProject = target.innerText
+        setCurrentProject(currentProject)
+    }
+    if(target.classList.contains('delete')) {
+        console.log(e.path[2].innerText)
+    }
+});
+
+createProject(`TODAYS' TASKS`);
+setCurrentProject(projects[0].name)
