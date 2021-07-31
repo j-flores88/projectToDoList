@@ -29,12 +29,11 @@ window.addEventListener('click', (e) => {
         setCurrentProject(currentProject)
     }
     if(target.classList.contains('delete')) {
-        if(e.path[2].innerText === '') {
+        if(e.path[3].id === 'taskDiv') {
             removeTask(currentProject, e.path[3].innerText);
-        } else {
-            console.log('for projects!')
-        }
-        removeProject(e.path[2].innerText);
+        } else if (e.path[3].className === 'projectDiv') {
+            removeProject(e.path[3].outerText);
+        }   
     }
 });
 

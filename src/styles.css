@@ -40,9 +40,29 @@
     background-color: violet;
 }
 
+.tasktitle {
+    font-weight: 800;
+}
+
 .projectTitle:hover {
     cursor: pointer;
 }
 .delete:hover {
     cursor: pointer;
+}
+
+.low {
+    color: royalblue;
+}
+
+.medium {
+    color: tan;
+}
+
+.high {
+    color: tomato;
+}
+
+i {
+    padding: 2.5px;
 }
