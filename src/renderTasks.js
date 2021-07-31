@@ -5,10 +5,7 @@ export const renderTasks = (currPj) => {
     taskArea.innerHTML = '';
     const tasks = currPj.getTasks
     if(tasks.length === 0) return
-    
-    
-    console.log(tasks)
-  
+
     tasks.forEach(task => {
         
         const btnSpan = createElement('div', '')
@@ -25,5 +22,4 @@ export const renderTasks = (currPj) => {
         tasksDiv.appendChild(btnSpan)
         taskArea.appendChild(tasksDiv);
     })
-    // currProjectDiv.appendChild(tasksArea)
 }
