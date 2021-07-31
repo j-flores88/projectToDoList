@@ -10,9 +10,6 @@ export class Task {
     get getDescription() {
       return this.description;
     }
-    get getDueDate() {
-      return this.dueDate;
-    }
     get getPriority() {
       return this.priority;
     }
@@ -23,10 +20,6 @@ export class Task {
     set setDescription(value) {
       if(value)
       this.description = value;
-    }
-    set setDueDate(value) {
-      if(value)
-      this.dueDate = value;
     }
     set setPriority(value) {
       if(value)

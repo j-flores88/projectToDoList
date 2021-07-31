@@ -2,7 +2,6 @@ import { createElement } from "./createElement";
 import { projects } from ".";
 import { projectList } from ".";
 
-
 export const renderProjects = () => {
     projectList.innerHTML = '';
     projects.forEach(project => {

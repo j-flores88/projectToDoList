@@ -13,6 +13,15 @@
     padding: 2%;
     border-radius: 10px;
 }
+#taskDiv {
+    display: flex;
+    justify-content: space-between;
+    background-color: whitesmoke;
+    margin: 1%;
+    padding: 1%;
+    border-radius: 10px;
+
+}
 #projectList {
     background-color: whitesmoke;
     padding: 2%;

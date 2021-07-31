@@ -1,4 +1,5 @@
 import { projects } from ".";
+import { renderTasks } from "./renderTasks";
 import { Task } from './Task'
 
 export const addTasks = (prjct, name, descriton, priority) => {
@@ -8,4 +9,5 @@ export const addTasks = (prjct, name, descriton, priority) => {
     });   
     const newTask = new Task(name, descriton, priority);
     currPj.setTasks = newTask;
+    renderTasks(currPj)
 };

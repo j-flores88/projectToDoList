@@ -27,7 +27,8 @@ window.addEventListener('click', (e) => {
         setCurrentProject(currentProject)
     }
     if(target.classList.contains('delete')) {
-        console.log(e.path[2].innerText)
+        // console.log(e.path[2].innerText)
+        console.log(e.path[3].innerText)
     }
 });
 
