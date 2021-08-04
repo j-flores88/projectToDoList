@@ -4,6 +4,8 @@ import { setCurrentProject } from "./setCurrentProject";
 import { removeTask } from "./removeTask";
 import { removeProject } from "./removeProject";
 import { taskPopUp } from "./taskPopUp";
+import { renderProjects } from "./renderProjects ";
+import { Project } from "./Project";
 
 
 const newPjText = document.getElementById('newPjText');
@@ -11,8 +13,10 @@ const newPjBtn = document.getElementById('newPjBtn');
 const newTaskBtn = document.getElementById('newTaskBtn');
 
 export const projectList = document.getElementById('projectList');
-export const projects = [];
-export let currentProject = `TODAYS' TASKS`
+export let projects = [];
+export let currentProject = '';
+
+export let data = localStorage.getItem('PROJECTS');
 
 newPjBtn.addEventListener('click', () => {
     if(newPjText.value === '') return
@@ -45,5 +49,16 @@ window.addEventListener('click', (e) => {
     }
 });
 
-createProject(`TODAYS' TASKS`);
-setCurrentProject(projects[0].name)
+if(JSON.parse(data).length > 0) {
+    projects = JSON.parse(data);
+    projects.forEach(project => {
+        Object.setPrototypeOf(project, Project.prototype)
+    })
+    setCurrentProject(projects[0].name);
+    currentProject = projects[0].name
+    renderProjects()
+}  else {
+    createProject(`TODAYS' TASKS`);
+    setCurrentProject(projects[0].name);
+    currentProject = `TODAYS' TASKS`;
+}

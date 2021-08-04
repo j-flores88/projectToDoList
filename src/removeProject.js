@@ -7,5 +7,6 @@ export const removeProject = (project) => {
           projects.splice(i, 1)
         }
     }
+    localStorage.setItem('PROJECTS', JSON.stringify(projects));
     renderProjects()
 }

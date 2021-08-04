@@ -5,7 +5,6 @@ export const renderTasks = (currPj) => {
     taskArea.innerHTML = '';
     const tasks = currPj.getTasks;
     if(tasks.length === 0) return
-
     tasks.forEach(task => {
         
         const btnDiv = createElement('div', '', 'btnDiv');
