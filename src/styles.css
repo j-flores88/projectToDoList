@@ -9,8 +9,8 @@ body {
     background-color: tomato;
     max-width: 90%;
     margin-top: 10%;
-    padding: 5%;
-    border-radius: 10px;
+    padding: 6.5%;
+    border-radius: 6px;
     box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
 }
 
@@ -20,6 +20,7 @@ body {
     text-align: center;
     justify-content: center;
     padding: 2%;
+    margin: 10px;
     border-radius: 10px;
     box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
 }
@@ -27,7 +28,7 @@ body {
     display: flex;
     justify-content: space-between;
     background-color: whitesmoke;
-    margin: 1%;
+    margin: 1.5%;
     padding: 1%;
     border-radius: 10px;
 

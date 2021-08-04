@@ -6,6 +6,7 @@ import { removeProject } from "./removeProject";
 import { taskPopUp } from "./taskPopUp";
 import { renderProjects } from "./renderProjects ";
 import { Project } from "./Project";
+import { Task } from "./Task";
 
 
 const newPjText = document.getElementById('newPjText');
@@ -45,7 +46,7 @@ window.addEventListener('click', (e) => {
         showModal('Update Task', 'New Task Name', 'New Task Description', 'Update', currentProject, e.path[3].innerText);
     }
     if(target.classList.contains('tasktitle')) {
-        taskPopUp(currentProject, e.path[2].innerText, e.path[1])
+        taskPopUp(currentProject, e.path[1].innerText, e.path[1])
     }
 });
 
@@ -53,6 +54,9 @@ if(JSON.parse(data).length > 0) {
     projects = JSON.parse(data);
     projects.forEach(project => {
         Object.setPrototypeOf(project, Project.prototype)
+        project.getTasks.forEach(task => {
+            Object.setPrototypeOf(task, Task.prototype)
+        })
     })
     setCurrentProject(projects[0].name);
     currentProject = projects[0].name
