@@ -3,6 +3,7 @@ import { showModal } from "./taskModal";
 import { setCurrentProject } from "./setCurrentProject";
 import { removeTask } from "./removeTask";
 import { removeProject } from "./removeProject";
+import { taskPopUp } from "./taskPopUp";
 
 
 const newPjText = document.getElementById('newPjText');
@@ -37,8 +38,10 @@ window.addEventListener('click', (e) => {
         }   
     }
     if(target.classList.contains('edit')){
-        // editModal(currentProject, e.path[3].innerText)'
         showModal('Update Task', 'New Task Name', 'New Task Description', 'Update', currentProject, e.path[3].innerText);
+    }
+    if(target.classList.contains('tasktitle')) {
+        taskPopUp(currentProject, e.path[2].innerText, e.path[1])
     }
 });
 

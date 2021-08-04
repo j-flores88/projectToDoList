@@ -47,7 +47,7 @@
 .projectTitle:hover {
     cursor: pointer;
 }
-.delete:hover {
+.delete:hover, .edit:hover, .tasktitle:hover {
     cursor: pointer;
 }
 
