@@ -1,12 +1,12 @@
+
 import { projects } from ".";
+import { findWorkingProject } from "./findWorkingProject";
 import { renderTasks } from "./renderTasks";
 import { Task } from './Task'
 
 export const addTasks = (prjct, name, descriton, priority) => {
-    let currPj;
-    projects.forEach(pj => {
-        if(pj.name === prjct) currPj = pj
-    });   
+    const currPj = findWorkingProject(prjct)
+
     const newTask = new Task(name, descriton, priority);
     currPj.setTasks = newTask;
     renderTasks(currPj)

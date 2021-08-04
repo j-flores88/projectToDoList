@@ -1,5 +1,3 @@
-import _ from "lodash";
-import { projects } from ".";
 import { findWorkingProject } from "./findWorkingProject";
 import { renderTasks } from "./renderTasks";
 

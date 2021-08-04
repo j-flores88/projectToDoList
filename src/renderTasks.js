@@ -14,14 +14,12 @@ export const renderTasks = (currPj) => {
         const taskTitle = createElement('div', task.name, 'tasktitle');
         const editBtn = createElement('i', '<i class="fas fa-edit edit"></i>');
         const deleteBtn = createElement('i', `<i class="fas fa-trash delete"></i>`);
-        const completeBtn = createElement('i', `<i class="fas fa-check complete"></i>`);
         const priorityBtn = createElement('i', `<i class="fas fa-flag priority"></i>`);
         if(task.priority === 'Low') priorityBtn.classList.add('low');
         if(task.priority === 'Medium') priorityBtn.classList.add('medium');
         if(task.priority === 'High') priorityBtn.classList.add('high');
         
         btnDiv.appendChild(editBtn);
-        btnDiv.appendChild(completeBtn);
         btnDiv.appendChild(priorityBtn);
         btnDiv.appendChild(deleteBtn);
         tasksDiv.appendChild(taskTitle);
