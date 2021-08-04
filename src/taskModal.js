@@ -59,7 +59,7 @@ export const showModal = (title, taskName, description, btnName, project, currTa
                 return task.name.includes(currTask)
             });
             currentTask.setName = taskName;
-            currentTask.setdescription = taskDescription;
+            currentTask.setDescription = taskDescription;
             currentTask.setPriority = taskPriority;
             renderTasks(currentProject);
         }

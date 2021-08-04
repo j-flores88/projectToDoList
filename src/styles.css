@@ -1,17 +1,27 @@
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+body {
+    background: #8ecae6 !important;
+}
+
 #content {
     background-color: tomato;
+    max-width: 90%;
     margin-top: 10%;
     padding: 5%;
-    border-radius: 2px;
+    border-radius: 10px;
+    box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
 }
 
 #projectsDiv, #currProjectDiv {
-    background-color: turquoise;
+    background-color: #219ebc;
     display: block;
     text-align: center;
     justify-content: center;
     padding: 2%;
     border-radius: 10px;
+    box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
 }
 #taskDiv {
     display: flex;
@@ -35,10 +45,13 @@
     display: flex;
     justify-content: space-between;
 }
-
-#currProjectDiv {
-    background-color: violet;
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900 !important;
 }
+/* #currProjectDiv {
+    background-color: #023047;
+} */
 
 .tasktitle {
     font-weight: 800;
