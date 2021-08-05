@@ -8,7 +8,6 @@ import { renderProjects } from "./renderProjects ";
 import { Project } from "./Project";
 import { Task } from "./Task";
 
-
 const newPjText = document.getElementById('newPjText');
 const newPjBtn = document.getElementById('newPjBtn');
 const newTaskBtn = document.getElementById('newTaskBtn');
