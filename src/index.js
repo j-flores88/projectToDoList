@@ -7,6 +7,7 @@ import { taskPopUp } from "./taskPopUp";
 import { renderProjects } from "./renderProjects ";
 import { Project } from "./Project";
 import { Task } from "./Task";
+import 'bootstrap';
 
 const newPjText = document.getElementById('newPjText');
 const newPjBtn = document.getElementById('newPjBtn');
